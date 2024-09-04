@@ -1,7 +1,7 @@
 NAME = convert
 CXX = c++
 CXXFLAGS = -std=c++98 -Wshadow -Wall -Werror -Wextra -g
-SRC = main.cpp
+SRC = ScalarConverter.cpp main.cpp
 OBJ = $(SRC:%.cpp=%.o)
 	
 all: $(NAME)
@@ -20,4 +20,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: clean fclean re all
+.PHONY: clean fclean re all inst

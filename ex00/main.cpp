@@ -6,11 +6,12 @@
 /*   By: bcastelo <bcastelo@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 10:40:54 by bcastelo          #+#    #+#             */
-/*   Updated: 2024/08/22 11:09:23 by bcastelo         ###   ########.fr       */
+/*   Updated: 2024/09/04 20:02:42 by bcastelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include "ScalarConverter.hpp"
 
 #define WIDTH 60
 
@@ -44,7 +45,11 @@ int	main(int argc, char **argv)
 		}
 		if (test == "char" || test == "all" || test == "char*")
 		{
+#if defined(instance)
+			ScalarConverter Test;
+#endif
 			print_header("Testing Char conversion");
+			ScalarConverter::convert("adeus");
 			
 		}
 	}
