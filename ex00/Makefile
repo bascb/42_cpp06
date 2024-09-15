@@ -1,7 +1,7 @@
 NAME = convert
 CXX = c++
 CXXFLAGS = -std=c++98 -Wshadow -Wall -Werror -Wextra -g
-SRC = ScalarConverter.cpp main.cpp
+SRC = detectType.cpp ScalarConverter.cpp main.cpp
 OBJ = $(SRC:%.cpp=%.o)
 	
 all: $(NAME)

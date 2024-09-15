@@ -6,7 +6,7 @@
 /*   By: bcastelo <bcastelo@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 10:40:54 by bcastelo          #+#    #+#             */
-/*   Updated: 2024/09/04 20:02:42 by bcastelo         ###   ########.fr       */
+/*   Updated: 2024/09/15 15:55:40 by bcastelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,31 +33,18 @@ void	print_help(char *prog_name);
 
 int	main(int argc, char **argv)
 {
-	std::string test;
-	
-	for (int i = 1; i < argc; i++)
-	{
-		test = argv[i];
-		if (test == "h" || test == "help")
-		{
-			print_help(argv[0]);
-			return (0);
-		}
-		if (test == "char" || test == "all" || test == "char*")
-		{
 #if defined(instance)
-			ScalarConverter Test;
+	ScalarConverter Test;
 #endif
-			print_header("Testing Char conversion");
-			ScalarConverter::convert("adeus");
-			
-		}
-	}
-	if (argc == 1 || test == "all")
+
+	if (argc != 2)
 	{
-		print_header("Subject example");
-		
+		print_help(argv[0]);
+		return (0);
 	}
+
+	print_header("Conversion output");
+	ScalarConverter::convert(argv[1]);
 	return (0);
 }
 
@@ -127,14 +114,12 @@ void	print_comment(std::string comment)
 
 void	print_help(char *prog_name)
 {
-	print_header("Options and usage");
-	std::cout << "Options:" << std::endl;
-	std::cout << std::endl;
-	std::cout << "char - Testing Char conversion" << std::endl;
-	std::cout << "all - Run all tests" << std::endl;
-	std::cout << std::endl;
+	print_header("Usage");
 	std::cout << "Usage example:" << std::endl;
 	std::cout << std::endl;
-	std::cout << prog_name << " shrub_const" << std::endl;
+	std::cout << prog_name << " a" << std::endl;
+	std::cout << prog_name << " 42" << std::endl;
+	std::cout << prog_name << " 42.0f" << std::endl;
+	std::cout << prog_name << " 42.0" << std::endl;
 	std::cout << std::endl;
 }
