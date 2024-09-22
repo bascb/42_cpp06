@@ -6,7 +6,7 @@
 /*   By: bcastelo <bcastelo@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 19:27:56 by bcastelo          #+#    #+#             */
-/*   Updated: 2024/09/15 22:15:31 by bcastelo         ###   ########.fr       */
+/*   Updated: 2024/09/22 18:02:23 by bcastelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,19 +133,3 @@ int	detectType( const std::string& literal )
     return (INVALID);
 }
 
-void printType(int type)
-{
-    std::string Types[5] = {"Unable to detect", "Char", "Int", "Float", "Double"};
-    int i;
-    
-    std::cout << "Literal type: ";
-    for (i = 0; i < 5; i++)
-    {
-        if ( type == i)
-        {
-            std::cout << Types[i] << std::endl;
-            return ;
-        }
-    }
-    std::cout << "Invalid input" << std::endl;
-}

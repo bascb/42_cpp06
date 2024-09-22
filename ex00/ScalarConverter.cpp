@@ -6,7 +6,7 @@
 /*   By: bcastelo <bcastelo@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 12:17:54 by bcastelo          #+#    #+#             */
-/*   Updated: 2024/09/15 22:15:13 by bcastelo         ###   ########.fr       */
+/*   Updated: 2024/09/22 19:08:14 by bcastelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,7 @@ ScalarConverter::~ScalarConverter( void )
 void ScalarConverter::convert( const std::string& literal )
 {
     int type;
-//    char char_value;
-//    int int_value;
-//    float float_value;
-//    double double_value;
+    value converted = {};
     
     if (literal.length() == 0)
     {
@@ -42,5 +39,7 @@ void ScalarConverter::convert( const std::string& literal )
     {
         std::cout << "Invalid input" << std::endl; 
         return ;
-    } 
+    }
+    convertValue(type, &converted, literal);
+    printValue( &converted);
 }
