@@ -6,7 +6,7 @@
 /*   By: bcastelo <bcastelo@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 19:02:51 by bcastelo          #+#    #+#             */
-/*   Updated: 2024/09/28 20:06:30 by bcastelo         ###   ########.fr       */
+/*   Updated: 2024/09/28 22:22:09 by bcastelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,11 +124,5 @@ void	print_comment(std::string comment)
 void	print_help(char *prog_name)
 {
 	print_header("Usage");
-	std::cout << "Usage example:" << std::endl;
-	std::cout << std::endl;
-	std::cout << prog_name << " a" << std::endl;
-	std::cout << prog_name << " 42" << std::endl;
-	std::cout << prog_name << " 42.0f" << std::endl;
-	std::cout << prog_name << " 42.0" << std::endl;
-	std::cout << std::endl;
+	std::cout << prog_name << std::endl;
 }
