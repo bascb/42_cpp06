@@ -6,7 +6,7 @@
 /*   By: bcastelo <bcastelo@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 12:17:54 by bcastelo          #+#    #+#             */
-/*   Updated: 2024/09/22 19:08:14 by bcastelo         ###   ########.fr       */
+/*   Updated: 2024/09/28 16:59:31 by bcastelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,7 @@ void ScalarConverter::convert( const std::string& literal )
        std::cout << "No input" << std::endl; 
        return ;
     }
-    std::cout << "Going to convert " << literal << std::endl;
     type = detectType(literal);
-    printType(type);
     if (type == -1)
     {
         std::cout << "Invalid input" << std::endl; 

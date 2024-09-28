@@ -6,7 +6,7 @@
 /*   By: bcastelo <bcastelo@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 19:28:29 by bcastelo          #+#    #+#             */
-/*   Updated: 2024/09/28 10:14:10 by bcastelo         ###   ########.fr       */
+/*   Updated: 2024/09/28 17:05:55 by bcastelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@
 #define INTEGER 2
 #define FLOAT 3
 #define DOUBLE 4
+#define PSEUDO 5
 
 #define CONVERSION_OK 0
 #define IMPOSSIBLE 1

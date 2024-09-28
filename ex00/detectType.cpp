@@ -6,7 +6,7 @@
 /*   By: bcastelo <bcastelo@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 19:27:56 by bcastelo          #+#    #+#             */
-/*   Updated: 2024/09/24 20:24:28 by bcastelo         ###   ########.fr       */
+/*   Updated: 2024/09/28 17:12:38 by bcastelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,10 +88,6 @@ int detectDouble( const std::string& literal )
     size_t len;
     int dots_nbr;
     
-    if (literal == "-inf" || literal == "+inf" || literal == "nan") 
-    {
-        return (DOUBLE);
-    }
     len = literal.length();
     if (literal[0] == '+' || literal[0] == '-' || isdigit(literal[0]))
     {
@@ -119,13 +115,29 @@ int detectDouble( const std::string& literal )
     return (0);
 }
 
+int detectPseudo( const std::string& literal )
+{
+    std::string Pseudo_d[3] = {"nan", "-inf", "+inf"};
+    std::string Pseudo_f[3] = {"nanf", "-inff", "+inff"};
+    int i;
+    
+    for (i = 0; i < 3; i++)
+    {
+        if (literal ==  Pseudo_d[i] || literal ==  Pseudo_f[i])
+        {
+            return (PSEUDO);
+        }
+    }
+    return (0);
+}
+
 int	detectType( const std::string& literal )
 {
-    int (*functions[4])( const std::string& ) = {detectChar, detectFloat, detectDouble, detectInt};
+    int (*functions[5])( const std::string& ) = {detectChar, detectFloat, detectDouble, detectInt, detectPseudo};
     int i;
     int type;
 
-    for (i = 0; i < 4; i++)
+    for (i = 0; i < 5; i++)
     {
         type = functions[i](literal);
         if (type)

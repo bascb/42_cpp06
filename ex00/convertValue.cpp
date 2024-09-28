@@ -6,7 +6,7 @@
 /*   By: bcastelo <bcastelo@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 19:30:06 by bcastelo          #+#    #+#             */
-/*   Updated: 2024/09/28 10:13:40 by bcastelo         ###   ########.fr       */
+/*   Updated: 2024/09/28 17:19:54 by bcastelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,23 +20,23 @@ void    setValidationState(value *to_set, int state)
     to_set->v_double = state;
 }
 
-int convertPseudo(value *to_convert, const std::string& literal)
+void    convertPseudo(value *to_convert, const std::string& literal)
 {
-    std::string Pseudos[3] = {"nan", "-inf", "+inf"};
+    std::string Pseudo_d[3] = {"nan", "-inf", "+inf"};
+    std::string Pseudo_f[3] = {"nanf", "-inff", "+inff"};
     int i;
     
     for (i = 0; i < 3; i++)
     {
-        if (Pseudos[i] == literal)
+        if (literal ==  Pseudo_d[i] || literal ==  Pseudo_f[i])
         {
             to_convert->v_char = IMPOSSIBLE;
             to_convert->v_int = IMPOSSIBLE;
             to_convert->v_float = i + 2;
             to_convert->v_double = i + 2;
-            return 1;
+            return;
         }
     }
-    return 0;
 }
 
 void    convertChar(value *to_convert, const std::string& literal)
@@ -112,13 +112,7 @@ void    convertFloat(value *to_convert, const std::string& literal)
 void    convertDouble(value *to_convert, const std::string& literal)
 {
     std::stringstream convert_stream(literal);
-    int is_pseudo;
     
-    is_pseudo = convertPseudo(to_convert, literal);
-    if (is_pseudo)
-    {
-        return;
-    }
     convert_stream >> to_convert->c_double;
     if (convert_stream.fail())
     {
@@ -157,10 +151,10 @@ void    convertDouble(value *to_convert, const std::string& literal)
 
 void    convertValue(int type, value *to_convert, const std::string& literal)
 {
-    void (*functions[4])(value *, const std::string&) = {convertChar, convertInt, convertFloat, convertDouble};
+    void (*functions[5])(value *, const std::string&) = {convertChar, convertInt, convertFloat, convertDouble, convertPseudo};
     int i;
 
-    for (i = 0; i < 4; i++)
+    for (i = 0; i < 5; i++)
     {
         if(type == i + 1)
         {
