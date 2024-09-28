@@ -6,7 +6,7 @@
 /*   By: bcastelo <bcastelo@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 22:41:22 by bcastelo          #+#    #+#             */
-/*   Updated: 2024/09/28 22:59:25 by bcastelo         ###   ########.fr       */
+/*   Updated: 2024/09/29 00:06:16 by bcastelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,15 @@ void	print_help(char *prog_name);
 int	main(void)
 {
     Base *Ramdom_type;
+    Base *sim_null;
     
 	print_header("Identify type");
     Ramdom_type = generate();
+    sim_null = NULL;
+    identify(Ramdom_type);
+    identify(*Ramdom_type);
+    identify(sim_null);
+    identify(*sim_null);
     delete Ramdom_type;
 	return (0);
 }

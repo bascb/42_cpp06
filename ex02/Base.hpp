@@ -6,7 +6,7 @@
 /*   By: bcastelo <bcastelo@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 22:27:43 by bcastelo          #+#    #+#             */
-/*   Updated: 2024/09/28 23:07:51 by bcastelo         ###   ########.fr       */
+/*   Updated: 2024/09/28 23:56:05 by bcastelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
+#include <exception>
 
 class Base
 {
@@ -24,5 +25,9 @@ class Base
 };
 
 Base *generate( void );
+
+void identify(Base* p);
+
+void identify(Base& p);
 
 #endif
