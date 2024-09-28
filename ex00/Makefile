@@ -3,13 +3,14 @@ CXX = c++
 CXXFLAGS = -std=c++98 -Wall -Werror -Wextra -g
 SRC = detectType.cpp convertValue.cpp printValue.cpp ScalarConverter.cpp main.cpp
 OBJ = $(SRC:%.cpp=%.o)
+DEPS = ScalarConverter.hpp
 	
 all: $(NAME)
 
 $(NAME): $(OBJ)
 	$(CXX) $(CXXFLAGS) -o $@ $^
 
-%.o: %.cpp
+%.o: %.cpp $(DEPS)
 	$(CXX) $(CXXFLAGS) -c -o $@ $<
 	
 clean:

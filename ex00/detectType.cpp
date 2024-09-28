@@ -6,7 +6,7 @@
 /*   By: bcastelo <bcastelo@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 19:27:56 by bcastelo          #+#    #+#             */
-/*   Updated: 2024/09/22 18:02:23 by bcastelo         ###   ########.fr       */
+/*   Updated: 2024/09/24 20:24:28 by bcastelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,10 @@ int detectDouble( const std::string& literal )
         {
             return (INVALID);
         }
-        return (DOUBLE);
+        if (dots_nbr == 1)
+        {
+            return (DOUBLE);
+        }
     }
     return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: bcastelo <bcastelo@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 18:01:56 by bcastelo          #+#    #+#             */
-/*   Updated: 2024/09/22 19:35:22 by bcastelo         ###   ########.fr       */
+/*   Updated: 2024/09/25 18:51:15 by bcastelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void printInt(value *val)
 
 void printFloat(value *val)
 {
-   std::string Errors[4] = {"ok", "nanf", "-inff", "+inff"};
+   std::string Errors[5] = {"ok", "impossible", "nanf", "-inff", "+inff"};
     
     std::cout << "float: ";
     if (val->v_float == CONVERSION_OK)
@@ -61,7 +61,7 @@ void printFloat(value *val)
 
 void printDouble(value *val)
 {
-   std::string Errors[4] = {"ok", "nan", "-inf", "+inf"};
+   std::string Errors[5] = {"ok", "impossible", "nan", "-inf", "+inf"};
     
     std::cout << "double: ";
     if (val->v_double == CONVERSION_OK)

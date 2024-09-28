@@ -6,7 +6,7 @@
 /*   By: bcastelo <bcastelo@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 10:40:54 by bcastelo          #+#    #+#             */
-/*   Updated: 2024/09/15 15:55:40 by bcastelo         ###   ########.fr       */
+/*   Updated: 2024/09/28 16:38:48 by bcastelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,8 @@ void	print_help(char *prog_name);
 
 int	main(int argc, char **argv)
 {
-#if defined(instance)
-	ScalarConverter Test;
-#endif
+	/* Uncomnnent next line to ensure that a compile error arises */
+	//ScalarConverter Testa;
 
 	if (argc != 2)
 	{
