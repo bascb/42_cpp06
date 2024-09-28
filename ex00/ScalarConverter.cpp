@@ -6,7 +6,7 @@
 /*   By: bcastelo <bcastelo@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 12:17:54 by bcastelo          #+#    #+#             */
-/*   Updated: 2024/09/28 16:59:31 by bcastelo         ###   ########.fr       */
+/*   Updated: 2024/09/28 20:17:37 by bcastelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,17 @@
 ScalarConverter::ScalarConverter( void )
 {
     std::cout << "ScalarConverter Default constructor called" << std::endl;
+}
+
+ScalarConverter::ScalarConverter( const ScalarConverter& )
+{
+    std::cout << "ScalarConverter copy constructor" << std::endl;
+}
+
+ScalarConverter& ScalarConverter::operator=( const ScalarConverter& )
+{
+    std::cout << "ScalarConverter Copy assignment operator called" << std::endl;
+	return (*this);
 }
 
 ScalarConverter::~ScalarConverter( void )
