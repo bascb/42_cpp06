@@ -6,7 +6,7 @@
 /*   By: bcastelo <bcastelo@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 12:17:54 by bcastelo          #+#    #+#             */
-/*   Updated: 2024/09/28 20:17:37 by bcastelo         ###   ########.fr       */
+/*   Updated: 2024/09/30 19:38:06 by bcastelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ ScalarConverter::ScalarConverter( void )
 
 ScalarConverter::ScalarConverter( const ScalarConverter& )
 {
-    std::cout << "ScalarConverter copy constructor" << std::endl;
+    std::cout << "ScalarConverter copy constructor called" << std::endl;
 }
 
 ScalarConverter& ScalarConverter::operator=( const ScalarConverter& )
